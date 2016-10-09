@@ -15,7 +15,7 @@ var loc_marker = null;
 function CenterControlBtnGreen(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -65,7 +65,7 @@ function CenterControlBtnGreen(controlDiv, map, placeMarker) {
 function CenterControlBtnRed(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -117,7 +117,7 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
 function CenterControlBtnGrey(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
