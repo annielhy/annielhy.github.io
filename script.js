@@ -378,7 +378,8 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,
     center: {lat: 37.090, lng: -95.712},
-    mapTypeId: 'terrain'
+    mapTypeId: 'terrain',
+    clickableIcons: false
   });
 
   function placeMarker(location) {
