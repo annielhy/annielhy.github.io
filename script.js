@@ -359,6 +359,7 @@ function CenterControlBtnLocate(controlDiv, map) {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        location.hash=pos.lat+','+pos.lon;
         map.setCenter(pos);
         if (loc_marker != null) {
           loc_marker.setMap(null);
