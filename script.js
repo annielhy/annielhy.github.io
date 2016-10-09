@@ -233,6 +233,13 @@ function CenterControlBtnTimer(controlDiv, map) {
        }
   };
 
+  self.startTimer = function(){
+     if(!self.timeoutTS){
+        self.timeoutTS = (new Date()).getTime()+15*60000;
+        self.timerFunc();
+     }
+  };
+
   self.clearTimer = function(){
      self.timeoutTS = null;
      clearTimeout(self.timeoutID);
@@ -241,11 +248,11 @@ function CenterControlBtnTimer(controlDiv, map) {
   };
 
 
+
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener('click', function() {
     if(!self.timeoutTS){
-       self.timeoutTS = (new Date()).getTime()+15*60000;
-       self.timerFunc();
+       self.startTimer();
     }else{
        self.clearTimer();
     }
