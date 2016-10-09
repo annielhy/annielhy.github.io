@@ -190,6 +190,69 @@ function CenterControlBtnClear(controlDiv, map) {
   });
 }
 
+// function to create Timer button
+function CenterControlBtnTimer(controlDiv, map) {
+
+  // Set CSS for the control border.
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginBottom = '10px';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Click to recenter the map';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '12px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Timer';
+  controlUI.appendChild(controlText);
+
+  var self = this;
+  this.timeoutTS = null;
+  this.timeoutID = null;
+
+  self.timerFunc = function(){
+      var currentTS = (new Date()).getTime();
+      var remainTS = self.timeoutTS - currentTS;
+      if(remainTS>0){
+         var remainMin = Math.floor(remainTS/60000);
+         var remainSec = Math.floor(remainTS/1000)%60;
+         controlText.innerHTML = remainMin+":"+remainSec;
+         self.timeoutID = setTimeout(self.timerFunc, 1000);
+      } else {
+         self.clearTimer();
+       }
+  };
+
+  self.clearTimer = function(){
+     self.timeoutTS = null;
+     clearTimeout(self.timeoutID);
+     self.timeoutID = null;
+     controlText.innerHTML = 'Timer';
+  };
+
+
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener('click', function() {
+    if(!self.timeoutTS){
+       self.timeoutTS = (new Date()).getTime()+15*60000;
+       self.timerFunc();
+    }else{
+       self.clearTimer();
+    }
+  });
+}
+
+
 // function to create Locate button
 function CenterControlBtnLocate(controlDiv, map) {
 
@@ -303,6 +366,7 @@ function initMap() {
   var centerControlRed = new CenterControlBtnRed(centerControlDiv, map, placeMarker);
   var centerControlUndo = new CenterControlBtnUndo(centerControlDiv, map);
   var centerControlClear = new CenterControlBtnClear(centerControlDiv, map);
+  var centerControlTimer = new CenterControlBtnTimer(centerControlDiv, map);
   var centerControlLocate = new CenterControlBtnLocate(centerControlDiv, map);
 
   centerControlDiv.index = 1;
