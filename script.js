@@ -113,6 +113,59 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
   });
 }
 
+ function to create toggle red btn
+function CenterControlBtnGrey(controlDiv, map, placeMarker) {
+
+  // Set CSS for the control border.
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginBottom = '10px';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Click to recenter the map';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '12px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Color Grey';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener('click', function() {
+    drawColor = "Grey";
+
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("HEY");
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      placeMarker(pos);
+    }, function() {
+      // handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    // DO NOTHING LMFAO
+  }
+
+
+  });
+}
+
+
 // function to create Undo button
 function CenterControlBtnUndo(controlDiv, map) {
 
@@ -333,9 +386,14 @@ function initMap() {
       var imageRed = "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
       var image = null;
       var fillColor = null;
+      var radius = 200;
       if (drawColor == "Green") {
         image = imageGrn;
         fillColor = "#00FF00";
+      } if (drawColor == "Green") {
+        image = imageGrn;
+        radius = 70;
+        fillColor = "#CCCCCC";
       } else {
         image = imageRed;
         fillColor = "#FF0000";
@@ -357,7 +415,7 @@ function initMap() {
         fillOpacity: 0.2,
         map: map,
         center: location,
-        radius: 200,
+        radius: radius,
         clickable: false
       });
 
