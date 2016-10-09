@@ -113,7 +113,7 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
   });
 }
 
- function to create toggle red btn
+// function to create toggle grey btn
 function CenterControlBtnGrey(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
