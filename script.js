@@ -393,7 +393,7 @@ function initMap() {
       } else if (drawColor == "Grey") {
         image = imageGrn;
         radius = 70;
-        fillColor = "#999999";
+        fillColor = "#666666";
       } else {
         image = imageRed;
         fillColor = "#FF0000";
