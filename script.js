@@ -390,7 +390,7 @@ function initMap() {
       if (drawColor == "Green") {
         image = imageGrn;
         fillColor = "#00FF00";
-      } if (drawColor == "Green") {
+      } if (drawColor == "Grey") {
         image = imageGrn;
         radius = 70;
         fillColor = "#CCCCCC";
@@ -429,6 +429,7 @@ function initMap() {
   var centerControlDiv = document.createElement('div');
   var centerControlGreen = new CenterControlBtnGreen(centerControlDiv, map, placeMarker);
   var centerControlRed = new CenterControlBtnRed(centerControlDiv, map, placeMarker);
+  var centerControlGrey = new CenterControlBtnGrey(centerControlDiv, map, placeMarker);
   var centerControlUndo = new CenterControlBtnUndo(centerControlDiv, map);
   var centerControlClear = new CenterControlBtnClear(centerControlDiv, map);
   var centerControlTimer = new CenterControlBtnTimer(centerControlDiv, map);
