@@ -302,6 +302,7 @@ function initMap() {
   var centerControlGreen = new CenterControlBtnGreen(centerControlDiv, map, placeMarker);
   var centerControlRed = new CenterControlBtnRed(centerControlDiv, map, placeMarker);
   var centerControlUndo = new CenterControlBtnUndo(centerControlDiv, map);
+  var centerControlClear = new CenterControlBtnClear(centerControlDiv, map);
   var centerControlLocate = new CenterControlBtnLocate(centerControlDiv, map);
 
   centerControlDiv.index = 1;
