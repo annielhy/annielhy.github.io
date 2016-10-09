@@ -382,8 +382,9 @@ function initMap() {
   });
 
   function placeMarker(location) {
-      var imageGrn = "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-      var imageRed = "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+      var imageGrn = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+      var imageRed = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+      var imageGrey = "http://storage.googleapis.com/support-kms-prod/SNP_2752063_en_v0";
       var image = null;
       var fillColor = null;
       var radius = 200;
@@ -391,7 +392,7 @@ function initMap() {
         image = imageGrn;
         fillColor = "#00FF00";
       } else if (drawColor == "Grey") {
-        image = imageGrn;
+        image = imageGrey;
         radius = 70;
         fillColor = "#666666";
       } else {
