@@ -326,7 +326,7 @@ function CenterControlBtnTimer(controlDiv, map) {
 function CenterControlBtnLocate(controlDiv, map) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
