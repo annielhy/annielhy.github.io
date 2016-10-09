@@ -22,7 +22,7 @@ function CenterControlBtnGreen(controlDiv, map, placeMarker) {
   controlUI.style.borderRadius = '3px';
   controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
   controlUI.style.cursor = 'pointer';
-  controlUI.style.marginBottom = '10px';
+  controlUI.style.marginBottom = '5px';
   controlUI.style.textAlign = 'center';
   controlUI.title = 'Click to recenter the map';
   controlDiv.appendChild(controlUI);
@@ -35,7 +35,8 @@ function CenterControlBtnGreen(controlDiv, map, placeMarker) {
   controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
   controlText.style.paddingRight = '5px';
-  controlText.innerHTML = 'Color Green';
+  controlText.style.color = '#00FF00';
+  controlText.innerHTML = 'Green';
   controlUI.appendChild(controlText);
 
   // Setup the click event listeners: simply set the map to Chicago.
@@ -73,7 +74,7 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
   controlUI.style.borderRadius = '3px';
   controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
   controlUI.style.cursor = 'pointer';
-  controlUI.style.marginBottom = '10px';
+  controlUI.style.marginBottom = '5px';
   controlUI.style.textAlign = 'center';
   controlUI.title = 'Click to recenter the map';
   controlDiv.appendChild(controlUI);
@@ -86,7 +87,8 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
   controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
   controlText.style.paddingRight = '5px';
-  controlText.innerHTML = 'Color Red';
+  controlText.style.color = '#FF0000';
+  controlText.innerHTML = 'Red';
   controlUI.appendChild(controlText);
 
   // Setup the click event listeners: simply set the map to Chicago.
@@ -139,7 +141,8 @@ function CenterControlBtnGrey(controlDiv, map, placeMarker) {
   controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
   controlText.style.paddingRight = '5px';
-  controlText.innerHTML = 'Color Grey';
+  controlText.style.color = '#666666';
+  controlText.innerHTML = 'Grey';
   controlUI.appendChild(controlText);
 
   // Setup the click event listeners: simply set the map to Chicago.
@@ -435,13 +438,14 @@ function initMap() {
   // Create the DIV to hold the control and call the CenterControl()
   // constructor passing in this DIV.
   var centerControlDiv = document.createElement('div');
+  var centerControlLocate = new CenterControlBtnLocate(centerControlDiv, map);
   var centerControlGreen = new CenterControlBtnGreen(centerControlDiv, map, placeMarker);
   var centerControlRed = new CenterControlBtnRed(centerControlDiv, map, placeMarker);
   var centerControlGrey = new CenterControlBtnGrey(centerControlDiv, map, placeMarker);
   var centerControlUndo = new CenterControlBtnUndo(centerControlDiv, map);
   var centerControlClear = new CenterControlBtnClear(centerControlDiv, map);
   var centerControlTimer = new CenterControlBtnTimer(centerControlDiv, map);
-  var centerControlLocate = new CenterControlBtnLocate(centerControlDiv, map);
+
 
   centerControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
