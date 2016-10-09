@@ -16,6 +16,7 @@ function CenterControlBtnGreen(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
   var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -66,6 +67,7 @@ function CenterControlBtnRed(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
   var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -118,6 +120,7 @@ function CenterControlBtnGrey(controlDiv, map, placeMarker) {
 
   // Set CSS for the control border.
   var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -170,7 +173,8 @@ function CenterControlBtnGrey(controlDiv, map, placeMarker) {
 function CenterControlBtnUndo(controlDiv, map) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -210,7 +214,8 @@ function CenterControlBtnUndo(controlDiv, map) {
 function CenterControlBtnClear(controlDiv, map) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
@@ -247,7 +252,8 @@ function CenterControlBtnClear(controlDiv, map) {
 function CenterControlBtnTimer(controlDiv, map) {
 
   // Set CSS for the control border.
-  var controlUI = document.createElement('div');
+  var controlUI = document.createElement('button');
+  controlUI.style.display = 'block';
   controlUI.style.backgroundColor = '#fff';
   controlUI.style.border = '2px solid #fff';
   controlUI.style.borderRadius = '3px';
