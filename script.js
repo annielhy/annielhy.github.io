@@ -226,7 +226,7 @@ function CenterControlBtnTimer(controlDiv, map) {
       if(remainTS>0){
          var remainMin = Math.floor(remainTS/60000);
          var remainSec = Math.floor(remainTS/1000)%60;
-         controlText.innerHTML = remainMin+":"+remainSec;
+         controlText.innerHTML = remainMin+":"+((remainSec<10)?"0":"")+remainSec;
          self.timeoutID = setTimeout(self.timerFunc, 1000);
       } else {
          self.clearTimer();
